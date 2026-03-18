@@ -2,10 +2,8 @@ import { Link as NextUILink } from '@nextui-org/link';
 import { Link } from '../navigation';
 
 import {
-  TwitterIcon,
-  GithubIcon,
-  LinkedInIcon,
-  FacebookIcon,
+  InstagramIcon,
+  TikTokIcon,
   Logo
 } from '@/components/icons';
 import { siteConfig } from '@/config/site';
@@ -30,31 +28,17 @@ export default function Footer({ footerLinks }: FooterProps) {
         <div className='w-1/2 flex justify-end'>
           <NextUILink
             isExternal
-            href={siteConfig.links.twitter}
-            aria-label='Twitter'
+            href='https://www.instagram.com/estudiemas'
+            aria-label='Instagram'
           >
-            <TwitterIcon size={48} className='text-default-500' />
+            <InstagramIcon size={48} className='text-default-500' />
           </NextUILink>
           <NextUILink
             isExternal
-            href={siteConfig.links.github}
-            aria-label='Github'
+            href='https://www.tiktok.com/@estudiemas'
+            aria-label='TikTok'
           >
-            <GithubIcon size={48} className='text-default-500' />
-          </NextUILink>
-          <NextUILink
-            isExternal
-            href={siteConfig.links.linkedIn}
-            aria-label='LinkedIn'
-          >
-            <LinkedInIcon size={48} className='text-default-500' />
-          </NextUILink>
-          <NextUILink
-            isExternal
-            href={siteConfig.links.facebook}
-            aria-label='Facebook'
-          >
-            <FacebookIcon size={48} className='text-default-500' />
+            <TikTokIcon size={48} className='text-default-500' />
           </NextUILink>
         </div>
       </div>
@@ -72,7 +56,7 @@ export default function Footer({ footerLinks }: FooterProps) {
       </div>
 
       <div className='flex text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:py-2 mt-14 justify-center'>
-        © {year} — B5 Holding AS - all rights reserved.
+        © {year} — Fundación EstudieMás - todos los derechos reservados.
       </div>
     </footer>
   );
