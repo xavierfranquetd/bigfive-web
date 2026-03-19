@@ -59,7 +59,7 @@ export default function AboutPage({ params: { locale } }: Props) {
           <h2 className={title()}>¡Nos encanta el feedback!&nbsp;</h2>
           <div className='flex md:inline-flex flex-col md:flex-row items-center'>
             <HeartBoldIcon
-              className='text-pink-500 animate-heartbeat'
+              className='text-[#B8CE24] animate-heartbeat'
               size={50}
               style={{
                 animationDuration: '2.5s'
