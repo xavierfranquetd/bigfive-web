@@ -53,6 +53,19 @@ export default function AboutPage({ params: { locale } }: Props) {
           </a>
           .
         </p>
+        <br />
+        <p>
+          Esta herramienta está basada en{' '}
+          
+            href='https://bigfive-test.com'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='underline'
+          >
+            bigfive-test.com
+          </a>
+          , proyecto open-source de Jonas Enge, publicado bajo licencia MIT.
+        </p>
       </div>
       <section>
         <div className='text-center justify-center mt-20'>
