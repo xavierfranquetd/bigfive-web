@@ -8,16 +8,10 @@ import {
   ExperimentIcon,
   LanguageIcon,
   LogosOpensource,
-  MoneyIcon,
-  PlusLinearIcon
+  MoneyIcon
 } from '@/components/icons';
 import { ArrowRightIcon } from '@/components/icons';
-import { siteConfig } from '@/config/site';
-import { SonarPulse } from '@/components/sonar-pulse';
-import { Button } from '@nextui-org/button';
 import { unstable_setRequestLocale } from 'next-intl/server';
-import { Chip, Tooltip } from '@nextui-org/react';
-import { Translated } from '@/components/translated';
 
 interface Props {
   params: { locale: string };
@@ -26,7 +20,6 @@ interface Props {
 export default function Home({ params: { locale } }: Props) {
   unstable_setRequestLocale(locale);
   const t = useTranslations('frontpage');
-  const f = useTranslations('facets');
 
   const features = [
     {
@@ -56,13 +49,6 @@ export default function Home({ params: { locale } }: Props) {
     violet: (chunks) => (
       <span className={title({ color: 'violet' })}>{chunks}</span>
     )
-  });
-
-  const testsTaken = t.rich('tests_taken', {
-    green: (chunks) => (
-      <span className={title({ color: 'green' })}>{chunks}</span>
-    ),
-    n: '4.000.000'
   });
 
   return (
@@ -106,134 +92,6 @@ export default function Home({ params: { locale } }: Props) {
           <FeaturesGrid features={features} />
         </div>
       </div>
-
-      <section className='border-t border-b border-divider px-8 mt-16 lg:mt-44 text-center'>
-        <div className='my-8'>
-          <h1 className={title()}>{testsTaken}</h1>
-        </div>
-      </section>
-
-      <div className='mt-20 text-center'>
-        <h1 className={title()}>{t('compare.title')}</h1>
-        <div className='mt-10'>
-          <div className='text-lg lg:text-xl font-normal text-default-500'>
-            {t('compare.text1')} {t('compare.text2')}
-          </div>
-        </div>
-      </div>
-
-      <div className='text-center h-64 md:h-80 mt-44 md:mt-56'>
-        <SonarPulse
-          color='#7928CA'
-          icon={
-            <Tooltip
-              showArrow
-              color='secondary'
-              content={t('call_to_action')}
-              offset={10}
-              radius='full'
-            >
-              <Button
-                isIconOnly
-                aria-label={t('call_to_action')}
-                className='z-50 w-auto h-auto bg-gradient-to-b from-[#FF1CF7] to-[#7928CA]'
-                radius='full'
-                as={Link}
-                href='/test'
-              >
-                <PlusLinearIcon
-                  className='flex items-center justify-center rounded-full text-white'
-                  size={54}
-                />
-              </Button>
-            </Tooltip>
-          }
-        >
-          <div
-            className='absolute rounded-full'
-            style={{
-              width: '130px',
-              top: 130 / 6,
-              left: -120
-            }}
-          >
-            {buildCircle([
-              {
-                name: f('openness_to_experience.title'),
-                href: '/articles/openness_to_experience'
-              },
-              {
-                name: f('conscientiousness.title'),
-                href: '/articles/conscientiousness'
-              },
-              { name: f('extraversion.title'), href: '/articles/extraversion' },
-              {
-                name: t('compare.action'),
-                href: '/compare/W3sibmFtZSI6Ik1hcnZpbiIsImlkIjoiNThhNzA2MDZhODM1YzQwMGM4YjM4ZTg0In0seyJuYW1lIjoiQXJ0aHVyIERlbnQiLCJpZCI6IjVlNTZiYTdhYjA5NjEzMDAwN2Q1ZDZkOCJ9LHsibmFtZSI6IkZvcmQgUGVyZmVjdCIsImlkIjoiNWRlYTllODhlMTA4Y2IwMDYyMTgzYWYzIn0seyJuYW1lIjoiU2xhcnRpYmFydGZhc3QiLCJpZCI6IjVlNTZiNjUwYjA5NjEzMDAwN2Q1ZDZkMCJ9XQ'
-              },
-              {
-                name: f('agreeableness.title'),
-                href: '/articles/agreeableness'
-              },
-              { name: f('neuroticism.title'), href: '/articles/neuroticism' }
-            ]).map((e, idx) => (
-              <div key={idx}>
-                <Button
-                  key={idx}
-                  name={e.name}
-                  style={e.style}
-                  className='absolute hidden md:inline-flex hover:bg-secondary'
-                  variant='bordered'
-                  as={Link}
-                  href={e.href}
-                  aria-label={e.name}
-                >
-                  {e.name}
-                </Button>
-                <Chip
-                  size='sm'
-                  color='secondary'
-                  variant='shadow'
-                  aria-label={e.name}
-                  classNames={{
-                    base: 'absolute md:hidden rounded-full left-[85px]',
-                    content: 'drop-shadow shadow-black text-white w-full w-36'
-                  }}
-                  style={e.smallStyle}
-                  as={Link}
-                  href={e.href}
-                >
-                  {e.name}
-                </Chip>
-              </div>
-            ))}
-          </div>
-        </SonarPulse>
-      </div>
-
-      <Translated />
     </section>
   );
 }
-
-const buildCircle = (list: { name: string; href: string }[]) => {
-  const num = list.length;
-  const radius = 180;
-  const start = -90;
-  const slice = 360 / num;
-
-  return list.map((item, idx) => {
-    const rotate = slice * idx + start;
-    return {
-      name: item.name,
-      href: item.href,
-      style: {
-        transform: `rotate(${rotate}deg) translate(${radius - 20}px) rotate(${-rotate}deg)`,
-        width: '195px'
-      },
-      smallStyle: {
-        transform: `rotate(${rotate}deg) translate(${radius - 60}px) rotate(${-rotate}deg)`
-      }
-    };
-  });
-};
