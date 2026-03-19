@@ -6,7 +6,6 @@ import clsx from 'clsx';
 import { FeaturesGrid } from '@/components/features-grid';
 import {
   ExperimentIcon,
-  GithubIcon,
   LanguageIcon,
   LogosOpensource,
   MoneyIcon,
@@ -103,22 +102,6 @@ export default function Home({ params: { locale } }: Props) {
               >
                 {t('call_to_action')} <ArrowRightIcon />
               </Link>
-              <Link
-                isExternal
-                className={clsx(
-                  buttonStyles({
-                    variant: 'bordered',
-                    radius: 'full',
-                    size: 'lg',
-                    fullWidth: true
-                  }),
-                  'md:w-auto'
-                )}
-                href={siteConfig.links.github}
-              >
-                <GithubIcon size={20} />
-                GitHub
-              </Link>
             </div>
           </div>
 
@@ -140,7 +123,6 @@ export default function Home({ params: { locale } }: Props) {
 
       <div className='mt-20 text-center'>
         <h1 className={title()}>{t('compare.title')}</h1>
-
         <div className='mt-10'>
           <div className='text-lg lg:text-xl font-normal text-default-500'>
             {t('compare.text1')} {t('compare.text2')}
@@ -267,10 +249,11 @@ export default function Home({ params: { locale } }: Props) {
     </section>
   );
 }
+
 const buildCircle = (list: { name: string; href: string }[]) => {
-  const num = list.length; // Number of Avatars
-  const radius = 180; // Distance from center
-  const start = -90; // Shift start from 0
+  const num = list.length;
+  const radius = 180;
+  const start = -90;
   const slice = 360 / num;
 
   return list.map((item, idx) => {
