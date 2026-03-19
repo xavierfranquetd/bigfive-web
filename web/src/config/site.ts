@@ -2,9 +2,9 @@ import { getTranslations } from 'next-intl/server';
 
 export type SiteConfig = typeof siteConfig;
 
-export const basePath = 'https://bigfive-test.com';
+export const basePath = 'https://personalidad.estudiemas.com';
 
-export const supportEmail = 'bigfive-test@rubynor.com';
+export const supportEmail = 'info@estudiemas.com';
 
 export type Language = {
   code: string;
@@ -54,10 +54,10 @@ export const languages: Language[] = [
 export const locales = languages.map((lang) => lang.code) as string[];
 
 export const siteConfig = {
-  name: 'Big Five Personality Test',
-  creator: '@maccyber',
+  name: 'EstudieMás - Prueba de Personalidad',
+  creator: '@estudiemas',
   description:
-    'Learn to know yourself better with a free, open-source personality test.',
+    'Conoce mejor tu personalidad con una prueba gratuita y open-source.',
   navItems: [
     {
       label: 'home',
@@ -70,10 +70,6 @@ export const siteConfig = {
     {
       label: 'compare',
       href: '/compare'
-    },
-    {
-      label: 'articles',
-      href: '/articles'
     },
     {
       label: 'about',
@@ -94,10 +90,6 @@ export const siteConfig = {
       href: '/compare'
     },
     {
-      label: 'articles',
-      href: '/articles'
-    },
-    {
       label: 'privacy',
       href: '/privacy'
     },
@@ -116,10 +108,6 @@ export const siteConfig = {
       href: '/'
     },
     {
-      label: 'articles',
-      href: '/articles'
-    },
-    {
       label: 'privacy',
       href: '/privacy'
     },
@@ -133,10 +121,8 @@ export const siteConfig = {
     }
   ],
   links: {
-    github: 'https://github.com/rubynor/bigfive-web',
-    twitter: 'https://twitter.com/rubynor',
-    linkedIn: 'https://www.linkedin.com/company/rubynor-as/',
-    facebook: 'https://www.facebook.com/rubynorno'
+    instagram: 'https://www.instagram.com/estudiemas',
+    tiktok: 'https://www.tiktok.com/@estudiemas'
   }
 };
 
