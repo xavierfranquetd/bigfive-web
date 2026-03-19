@@ -1,6 +1,3 @@
-Borra todo y pega esto:
-
-```tsx
 'use client';
 
 import {
@@ -133,6 +130,3 @@ export const Navbar = ({ navItems, navMenuItems }: NavbarProps) => {
     </NextUINavbar>
   );
 };
-```
-
-Commit changes cuando esté listo.
