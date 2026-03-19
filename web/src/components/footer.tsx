@@ -1,12 +1,10 @@
 import { Link as NextUILink } from '@nextui-org/link';
 import { Link } from '../navigation';
-
 import {
   InstagramIcon,
   TikTokIcon,
   Logo
 } from '@/components/icons';
-import { siteConfig } from '@/config/site';
 
 interface FooterProps {
   footerLinks: {
@@ -42,22 +40,5 @@ export default function Footer({ footerLinks }: FooterProps) {
           </NextUILink>
         </div>
       </div>
-
       <div className='w-full flex justify-center mt-12'>
-        <ul className='flex mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0'>
-          {footerLinks.map((item, index) => (
-            <li key={index}>
-              <Link href={item.href} className='hover:underline me-4 md:me-6'>
-                {item.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div className='flex text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:py-2 mt-14 justify-center'>
-        © {year} — Fundación EstudieMás - todos los derechos reservados.
-      </div>
-    </footer>
-  );
-}
+        <ul className='flex mt-3 text
