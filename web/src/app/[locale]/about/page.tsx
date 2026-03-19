@@ -22,44 +22,41 @@ export async function generateMetadata({
 
 export default function AboutPage({ params: { locale } }: Props) {
   unstable_setRequestLocale(locale);
-
   return (
     <>
       <div className='text-center justify-center mt-10'>
-        <h1 className={title()}>About</h1>
+        <h1 className={title()}>Acerca de EstudieMás</h1>
       </div>
       <div className='mt-2 text-medium lg:mt-4 lg:text-large'>
         <p>
-          Welcome to bigfive-test.com, your premier destination for exploring
-          personality traits using the scientifically acclaimed Big Five model.
-          Our free, open-source test offers detailed insights into the five key
-          dimensions of personality: Openness, Conscientiousness, Extraversion,
-          Agreeableness, and Neuroticism.
+          Bienvenido a la prueba de personalidad de la Fundación EstudieMás,
+          una herramienta gratuita y open-source basada en el modelo Big Five,
+          el modelo psicológico más confiable y científicamente validado para
+          medir la personalidad.
         </p>
         <br />
         <p>
-          Each dimension is carefully analyzed to provide a comprehensive view
-          of your traits and how they influence your behavior and interactions.
-        </p>
-        <p>
-          Developed with precision and accessibility in mind, our test helps you
-          understand yourself better and foster personal growth. Embrace the
-          journey of self-discovery with bigfive-test.com, where psychological
-          insights meet user-friendly technology.
+          La prueba analiza cinco dimensiones clave: Apertura a la Experiencia,
+          Escrupulosidad, Extraversión, Amabilidad y Neuroticismo, ofreciendo
+          una visión detallada de tus rasgos y cómo influyen en tu comportamiento
+          e interacciones.
         </p>
         <br />
         <p>
-          If you have questions please read through the{' '}
+          Si tienes preguntas, consulta primero las{' '}
           <Link href='/faq' className='underline'>
             FAQ
-          </Link>{' '}
-          first. If you can&apos;t find an answer there, feel free to contact us
-          at bigfive-test@rubynor.com.
+          </Link>
+          . Si no encuentras la respuesta, escríbenos a{' '}
+          <a href='mailto:info@estudiemas.org' className='underline'>
+            info@estudiemas.org
+          </a>
+          .
         </p>
       </div>
       <section>
         <div className='text-center justify-center mt-20'>
-          <h2 className={title()}>We love feedback!&nbsp;</h2>
+          <h2 className={title()}>¡Nos encanta el feedback!&nbsp;</h2>
           <div className='flex md:inline-flex flex-col md:flex-row items-center'>
             <HeartBoldIcon
               className='text-pink-500 animate-heartbeat'
@@ -70,8 +67,7 @@ export default function AboutPage({ params: { locale } }: Props) {
             />
           </div>
           <div className='mt-2 text-medium lg:mt-4 lg:text-large'>
-            Send us feedback about how our features can be improved or specific
-            issues.
+            Cuéntanos cómo podemos mejorar o reporta un problema específico.
           </div>
         </div>
         <Feedback />
