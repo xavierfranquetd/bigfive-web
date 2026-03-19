@@ -14,7 +14,7 @@ const spanish = {
         'Realiza la prueba de personalidad Big Five, gratuita y open-source. Aprende a conocer tus rasgos de personalidad y compárate con tu pareja, compañeros, amigos o familiares.'
     },
     title: 'Prueba de personalidad Big Five',
-    call_to_action: 'Haz la prueba gratis ahora',
+    call_to_action: 'Haz la prueba ahora',
     no_registration: '*No es necesario registrarse',
     tests_taken: 'Más de <green>{n}</green> personas han realizado la prueba',
     compare: {
@@ -31,8 +31,8 @@ const spanish = {
         text: 'Este es un proyecto de código abierto con licencia MIT.'
       },
       free: {
-        title: 'Gratis',
-        text: 'La prueba es completamente gratuita'
+        title: 'EstudieMas',
+        text: 'Esta Prueba es parte de EstudieMas'
       },
       scientific: {
         title: 'Científico',
