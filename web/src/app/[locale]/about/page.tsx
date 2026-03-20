@@ -53,7 +53,7 @@ export default function AboutPage({ params: { locale } }: Props) {
         <br />
         <p>
           Esta herramienta está basada en{' '}
-          
+        </a> <a>
             href='https://bigfive-test.com'
             target='_blank'
             rel='noopener noreferrer'
