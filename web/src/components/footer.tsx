@@ -52,7 +52,7 @@ export default function Footer({ footerLinks }: FooterProps) {
         </ul>
       </div>
       <p className='text-center text-sm text-gray-500 mt-4'>
-        © {year} EstudieMás. Todos los derechos reservados.
+        © {year} EstudieMas. Todos los derechos reservados.
       </p>
     </footer>
   );
