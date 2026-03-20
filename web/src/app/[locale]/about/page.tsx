@@ -3,11 +3,9 @@ import { title } from '@/components/primitives';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import Feedback from './feedback';
 import { Link } from '@/navigation';
-
 interface Props {
   params: { locale: string };
 }
-
 export async function generateMetadata({
   params: { locale }
 }: {
@@ -19,7 +17,6 @@ export async function generateMetadata({
     description: t('seo.description')
   };
 }
-
 export default function AboutPage({ params: { locale } }: Props) {
   unstable_setRequestLocale(locale);
   return (
