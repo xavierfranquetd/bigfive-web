@@ -41,4 +41,19 @@ export default function Footer({ footerLinks }: FooterProps) {
         </div>
       </div>
       <div className='w-full flex justify-center mt-12'>
-        <ul className='flex mt-3 text
+        <ul className='flex mt-3 text-sm text-gray-500 gap-6'>
+          {footerLinks.map((link) => (
+            <li key={link.href}>
+              <Link href={link.href} className='hover:underline'>
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <p className='text-center text-sm text-gray-500 mt-4'>
+        © {year} EstudieMás. Todos los derechos reservados.
+      </p>
+    </footer>
+  );
+}
